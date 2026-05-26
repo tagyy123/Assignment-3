@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(ellipse at top left, #4a1080 0%, #1a0535 40%, #0d0020 100%);
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+}
+
+/* PAGE */
+.page {
+  position: relative;
+  padding: 30px 40px;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.see-all {
+  color: #ccc;
+  font-size: 0.85rem;
+  text-decoration: none;
+  position: absolute;
+  top: 30px;
+  right: 40px;
+}
+
+.see-all:hover { color: #fff; }
+
+/* GRID — 4 equal columns, 2 rows */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+/* CARD */
+.card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 25px;
+  padding: 12px 12px 12px;
+
+  /* 4 per row with gap accounted for */
+  width: calc(25% - 14px);
+
+  /* Stack children vertically */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
+
+  backdrop-filter: blur(6px);
+  transition: transform 0.2s ease;
+}
+
+.card:hover { transform: translateY(-4px); }
+
+.card.active {
+  border: 2px solid rgba(160, 90, 255, 0.75);
+}
+
+/* IMAGE — fixed square */
+.img-wrap {
+  position: relative;
+  width: 90%;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  border-radius: 22px;
+  image-align: center;
+}
+
+.img-wrap img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* INFO ROW — name left, likes right */
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3px;
+}
+
+.name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.likes {
+  font-size: 1rem;
+  color: #bbb;
+  white-space: nowrap;
+  margin-left: 6px;
+}
+
+/* BID BUTTON — full width, pill shape */
+.bid-btn {
+  position: relative;
+  width: 100%;
+  padding: 8px 0;
+  border: 2px solid rgba(160, 90, 255, 0.75);
+  border-radius: 40px;
+  background: transparent;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.4px;
+  transition: background 0.2s;
+
+  /* push button to bottom of card */
+  margin-top: auto;
+}
+
+.bid-btn:hover {
+  background: rgba(140, 70, 255, 0.28);
+}
